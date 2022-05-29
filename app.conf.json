@@ -1,0 +1,18 @@
+{
+    "database":{
+        "host":"localhost",
+        "user":"root",
+        "name":"permadani_rias",
+        "port":"3306",
+        "password":"",
+        "max_idle_connection":30,
+        "max_lifetime_connection":30
+    },
+    "server": {
+        "port": 8029,
+        "readheadertimeout": 20,
+        "readtimeout": 60,
+        "writetimeout": 120,
+        "idletimeout": 90
+    }
+}
