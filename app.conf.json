@@ -14,5 +14,6 @@
         "readtimeout": 60,
         "writetimeout": 120,
         "idletimeout": 90
-    }
+    },
+    "base_url": "http://localhost:8029/"
 }

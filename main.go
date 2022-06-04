@@ -13,6 +13,7 @@ import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
+	controllers "permadani_rias/controller"
 )
 
 func main() {
@@ -85,4 +86,17 @@ func main() {
 func Routing(router *gin.Engine) {
 	// Root static
 	router.Static("/img-storage", "./asset/img")
+	router.Static("/asset", "./views/static")
+	// Load HTML
+	router.LoadHTMLGlob("views/html/*/*.html")
+
+	// Root group
+
+	router.GET("", func(c *gin.Context) { controllers.LoginPage(c) })
+	router.GET("/password", func(c *gin.Context) { controllers.ForgetPassword(c) })
+
+	routeAuth := router.Group("auth")
+	{
+		routeAuth.POST("login", func(c *gin.Context) { controllers.Login(c) })
+	}
 }

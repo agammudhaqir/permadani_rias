@@ -1,16 +1,16 @@
 	
-    <?php $this->load->view("template/login/header.php") ?>
+    {{.headerAuth}}
 	<div class="content">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 order-md-2">
-					<img src="<?=base_url('shard/')?>login/images/panggung.jpg" alt="Image" class="img-fluid">
+					<img src="{{.base_url}}asset/shard/login/images/panggung.jpg" alt="Image" class="img-fluid">
 				</div>
 				<div class="col-md-6 contents">
 					<div class="row justify-content-center">
 						<div class="col-md-8">
 							<div class="mb-4">
-								<h3>Sign In to <strong>Permadani Rias</strong></h3>
+								<h3>Sign In to <strong>Permadani Rias {{.ciri}}</strong></h3>
 								<p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
 							</div>
 							<form id="form-login" method="POST" action="javascript:void(0);">
@@ -57,8 +57,8 @@
 			</div>
 		</div>
 	</div>
-<?php $this->load->view("template/login/footer.php") ?>
-<?php $this->load->view("jQuery/jauth.php") ?>
+{{.footerAuth}}
+<!-- <?php $this->load->view("jQuery/jauth.php") ?> -->
   
     
 	
