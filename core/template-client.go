@@ -1,6 +1,9 @@
 package core
 
-func headerTemplateClient() string{
+import "github.com/spf13/viper"
+
+func HeaderTemplateClient() string {
+	base_url := viper.GetString("base_url")
 	html := `
 	<!doctype html>
 	<html class="no-js h-100" lang="en">
@@ -15,14 +18,14 @@ func headerTemplateClient() string{
 		<!-- End Google Tag Manager -->
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Shards Dashboard Pro - Premium Bootstrap 4 Admin Dashboard Template Pack</title>
+		<title>Permadani rias</title>
 		<meta name="description" content="A premium collection of beautiful hand-crafted Bootstrap 4 admin dashboard templates and dozens of custom components built for data-driven applications.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="http://localhost/Permadani_rias/shard/styles/shards-dashboards.1.1.0.min.css">
-		<link rel="stylesheet" href="http://localhost/Permadani_rias/shard/styles/extras.1.3.1.min.css">
+		<link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="` + base_url + `asset/shard/styles/shards-dashboards.1.1.0.min.css">
+		<link rel="stylesheet" href="` + base_url + `asset/shard/styles/extras.1.3.1.min.css">
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 	  </head>
 	  <body class="h-100">
@@ -35,7 +38,7 @@ func headerTemplateClient() string{
 				  <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
 					<a class="navbar-brand" href="#" style="line-height: 25px;">
 					  <div class="d-table m-auto">
-						<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 25px;" src="http://localhost/Permadani_rias/shard/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
+						<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 25px;" src="` + base_url + `asset/shard/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
 						<span class="d-none d-md-inline ml-1">Shards Dashboard</span>
 					  </div>
 					</a>
@@ -165,7 +168,8 @@ func headerTemplateClient() string{
 	return html
 }
 
-func footerTemplateClient() string{
+func FooterTemplateClient() string {
+	base_url := viper.GetString("base_url")
 	html := `
 			<footer class="main-footer d-flex p-2 px-3 bg-white border-top">
 			<ul class="nav">
@@ -197,9 +201,9 @@ func footerTemplateClient() string{
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 		<script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-		<script src="http://localhost/Permadani_rias/shard/scripts/extras.1.3.1.min.js"></script>
-		<script src="http://localhost/Permadani_rias/shard/scripts/shards-dashboards.1.3.1.min.js"></script>
-		<script src="http://localhost/Permadani_rias/shard/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/extras.1.3.1.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.3.1.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
 		</body>
 		</html>
 	`

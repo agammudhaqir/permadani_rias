@@ -99,4 +99,18 @@ func Routing(router *gin.Engine) {
 	{
 		routeAuth.POST("login", func(c *gin.Context) { controllers.Login(c) })
 	}
+	routeClient := router.Group("client")
+	{
+		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c) })
+	}
+	routeAdmin := router.Group("admin")
+	{
+		routeAdmin.GET("", func(c *gin.Context) { controllers.AdminDashboard(c) })
+		routeAdmin.GET("data-dekorasi", func(c *gin.Context) { controllers.DataDekorasi(c) })
+		routeAdmin.GET("data-penyewaan", func(c *gin.Context) { controllers.DataPenyewaan(c) })
+		routeAdmin.GET("data-panggung", func(c *gin.Context) { controllers.DataPanggung(c) })
+		routeAdmin.GET("pengeluaran", func(c *gin.Context) { controllers.Pengeluaran(c) })
+		routeAdmin.GET("pemasukan", func(c *gin.Context) { controllers.Pemasukan(c) })
+		routeAdmin.GET("transaksi", func(c *gin.Context) { controllers.DataTransaksi(c) })
+	}
 }
