@@ -122,29 +122,23 @@ func HeaderTemplateClient() string {
 							<a href="blog-overview.html" class="dropdown-item">Blog</a>
 						  </div>
 						</li>
+
 						<li class="nav-item">
-						  <a href="header-navigation.html" class="nav-link active"><i class="material-icons">view_day</i> Header Nav</a>
+						  <a href="` + base_url + `client" class="nav-link active"><i class="material-icons">view_day</i> Catalog</a>
 						</li>
+
 						<li class="nav-item">
-						  <a href="icon-sidebar-nav.html" class="nav-link"><i class="material-icons">&#xE251;</i> Icon Sidebar</a>
+						  <a href="` + base_url + `client/status" class="nav-link"><i class="material-icons">&#xE251;</i> Status</a>
 						</li>
-						<li class="nav-item dropdown">
-						  <a class="nav-link" data-toggle="dropdown"><i class="material-icons">view_module</i> Components</a>
-						  <div class="dropdown-menu dropdown-menu-small">
-							<a href="components-overview.html" class="dropdown-item">Overview</a>
-							<a href="components-blog-posts.html" class="dropdown-item">Blog Posts</a>
-						  </div>
-						</li>
-						<li class="nav-item dropdown">
-						  <a class="nav-link" data-toggle="dropdown"><i class="material-icons">&#xE2C7;</i> File Managers</a>
-						  <div class="dropdown-menu dropdown-menu-small">
-							<a href="file-manager-list.html" class="dropdown-item">Files - List View</a>
-							<a href="file-manager-cards.html" class="dropdown-item">Files - Cards View</a>
-						  </div>
-						</li>
+
 						<li class="nav-item">
-						  <a href="transaction-history.html" class="nav-link"><i class="material-icons"></i> Transactions</a>
+						  <a href="` + base_url + `client/transaksi" class="nav-link"><i class="material-icons"></i> Transaksi</a>
 						</li>
+
+						<li class="nav-item">
+						  <a href="` + base_url + `client/jadwal" class="nav-link"><i class="material-icons"></i> Jadwal</a>
+						</li>
+
 						<li class="nav-item dropdown">
 						  <a class="nav-link" data-toggle="dropdown"><i class="material-icons">&#xE8B9;</i> User Account</a>
 						  <div class="dropdown-menu dropdown-menu-small">

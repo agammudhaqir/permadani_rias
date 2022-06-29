@@ -102,6 +102,9 @@ func Routing(router *gin.Engine) {
 	routeClient := router.Group("client")
 	{
 		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c) })
+		routeClient.GET("jadwal", func(c *gin.Context) { controllers.ClientJadwal(c) })
+		routeClient.GET("status", func(c *gin.Context) { controllers.ClientStatus(c) })
+		routeClient.GET("transaksi", func(c *gin.Context) { controllers.ClientTransaksi(c) })
 	}
 	routeAdmin := router.Group("admin")
 	{
