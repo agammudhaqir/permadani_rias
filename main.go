@@ -7,13 +7,14 @@ import (
 	"net/http"
 	"time"
 
+	controllers "permadani_rias/controller"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/memstore"
 	"github.com/gin-gonic/gin"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 	"github.com/spf13/viper"
-	controllers "permadani_rias/controller"
 )
 
 func main() {
@@ -35,14 +36,15 @@ func main() {
 	host := viper.GetString("database.host")
 	port := viper.GetInt("database.port")
 
-	psqlInfo := fmt.Sprintf("%s:%s@(%s:%d)/%s", username, password, host, port, database)
+	//psqlInfo := fmt.Sprintf("%s:%s@(%s:%d)/%s", username, password, host, port, database)
+	// psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable",host, port, username, password, database)
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, username, password, database)
 
-	db, err := sql.Open("mysql", psqlInfo)
+	db, err := sql.Open("postgres", psqlInfo)
 	if err != nil {
-		fmt.Println("hlo")
+		fmt.Println("Error connect database, please check!!!")
 		log.Fatalln(err)
 	}
-
 	defer db.Close()
 
 	maxLifetime, _ := time.ParseDuration(viper.GetString("database.max_lifetime_connection") + "s")
@@ -62,7 +64,7 @@ func main() {
 	// //---- HANDLING FORCE ERROR ----
 	router.Use(gin.Recovery())
 
-	Routing(router)
+	Routing(router, db)
 
 	tmphttpreadheadertimeout, _ := time.ParseDuration(viper.GetString("server.readheadertimeout") + "s")
 	tmphttpreadtimeout, _ := time.ParseDuration(viper.GetString("server.readtimeout") + "s")
@@ -83,7 +85,7 @@ func main() {
 
 }
 
-func Routing(router *gin.Engine) {
+func Routing(router *gin.Engine, db *sql.DB) {
 	// Root static
 	router.Static("/img-storage", "./asset/img")
 	router.Static("/asset", "./views/static")
@@ -101,7 +103,11 @@ func Routing(router *gin.Engine) {
 	}
 	routeClient := router.Group("client")
 	{
-		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c) })
+		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c, db) })
+		routeClient.GET("get-catalog", func(c *gin.Context) { controllers.GetCatalog(c, db) })
+		routeClient.GET("jadwal", func(c *gin.Context) { controllers.ClientJadwal(c) })
+		routeClient.GET("status", func(c *gin.Context) { controllers.ClientStatus(c) })
+		routeClient.GET("transaksi", func(c *gin.Context) { controllers.ClientTransaksi(c) })
 	}
 	routeAdmin := router.Group("admin")
 	{

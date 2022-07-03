@@ -1,0 +1,27 @@
+{{.headerClient}}
+<div class="main-content-container container" id="main-container">
+    <!-- Page Header -->
+    <div class="page-header row no-gutters py-4">
+      <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+      </div>
+
+      <div class="col-12 col-sm-4 d-flex align-items-center">
+        <h1>Status</h1>
+      </div>
+      
+      <div class="col-12 col-sm-4 d-flex align-items-center">
+        
+      </div>
+    </div>
+    <!-- End Page Header -->
+    <!-- Small Stats Blocks -->
+    
+    
+    <!-- End Small Stats Blocks -->
+  </div>
+  {{.footerClient}}
+  <script>
+    const globalHeightDefault = $('body').height() - 165
+    $('#main-container').css('height',globalHeightDefault)
+    console.log(globalHeightDefault);
+  </script>

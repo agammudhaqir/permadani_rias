@@ -62,9 +62,9 @@ func HeaderTemplateAdmin() string {
 			<div class="nav-wrapper">
 			 
 			  <ul class="nav flex-column">
-				<ul class="nav flex-column">
+				<ul class="nav flex-column" id="container-menu">
 				  <li class="nav-item">
-					<a class="nav-link active" href="` + base_url + `admin">
+					<a class="nav-link " href="` + base_url + `admin">
 					  <i class="material-icons">dashboard</i>
 					  <span>Dashboard</span>
 					</a>
@@ -122,7 +122,7 @@ func HeaderTemplateAdmin() string {
 					  <span class="list-menu">Setting</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-small" role="menu" aria-labelledby="dLabel">
-					  <a class="dropdown-item" href="<?=base_url()?>admin/setting">
+					  <a class="dropdown-item" href="` + base_url + `admin/setting">
 						Setting User
 					  </a>
 					  <a class="dropdown-item" href="http://localhost:8011/setting/user">
@@ -273,6 +273,7 @@ func FooterTemplateAdmin() string {
 			<script src="` + base_url + `asset/shard/scripts/extras.1.1.0.min.js"></script>
 			<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.1.0.min.js"></script>
 			<script src="` + base_url + `asset/shard/scripts/app/app-blog-overview.1.1.0.js"></script>
+			<script src="` + base_url + `asset/asset/js/global.js"></script>
 			<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 			<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 			<script src="https://cdn.datatables.net/fixedcolumns/4.0.0/js/dataTables.fixedColumns.min.js"></script>

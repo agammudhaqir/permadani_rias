@@ -1,10 +1,10 @@
 {
     "database":{
         "host":"localhost",
-        "user":"root",
+        "user":"postgres",
         "name":"permadani_rias",
-        "port":"3306",
-        "password":"",
+        "port":"5432",
+        "password":"root",
         "max_idle_connection":30,
         "max_lifetime_connection":30
     },
