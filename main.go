@@ -1,18 +1,18 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
-	"log"
 	"net/http"
 	"time"
 
 	controllers "permadani_rias/controller"
+	helper "permadani_rias/helper"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/memstore"
 	"github.com/gin-gonic/gin"
+	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 	"github.com/spf13/viper"
 )
@@ -38,18 +38,30 @@ func main() {
 
 	//psqlInfo := fmt.Sprintf("%s:%s@(%s:%d)/%s", username, password, host, port, database)
 	// psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+"password=%s dbname=%s sslmode=disable",host, port, username, password, database)
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, username, password, database)
+	// psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, username, password, database)
 
-	db, err := sql.Open("postgres", psqlInfo)
+	// db, err := sql.Open("postgres", psqlInfo)
+	// if err != nil {
+	// 	fmt.Println("Error connect database, please check!!!")
+	// 	log.Fatalln(err)
+	// }
+	// defer db.Close()
+
+	// maxLifetime, _ := time.ParseDuration(viper.GetString("database.max_lifetime_connection") + "s")
+	// db.SetMaxIdleConns(viper.GetInt("database.max_idle_dbection"))
+	// db.SetConnMaxLifetime(maxLifetime)
+
+	//connectionString := fmt.Sprintf("%s:%s@(%s:%d)/%s", username, password, host, port, database)
+	connectionString := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, username, password, database)
+	db, err := sqlx.Connect("postgres", connectionString)
 	if err != nil {
-		fmt.Println("Error connect database, please check!!!")
-		log.Fatalln(err)
+		fmt.Println("Connection to DB Error : ", err)
 	}
 	defer db.Close()
+	db.SetConnMaxLifetime(30 * time.Second)
+	db.SetConnMaxIdleTime(30)
 
-	maxLifetime, _ := time.ParseDuration(viper.GetString("database.max_lifetime_connection") + "s")
-	db.SetMaxIdleConns(viper.GetInt("database.max_idle_dbection"))
-	db.SetConnMaxLifetime(maxLifetime)
+	dbs := helper.DBStruct{Dbx: db}
 
 	// 3. Routing
 	router := gin.New()
@@ -62,9 +74,11 @@ func main() {
 	router.Use(sessions.Sessions("PERMADANI RIAS", sessionstore))
 
 	// //---- HANDLING FORCE ERROR ----
+	// fmt.Println(db)
+	// return
 	router.Use(gin.Recovery())
 
-	Routing(router, db)
+	Routing(router, dbs)
 
 	tmphttpreadheadertimeout, _ := time.ParseDuration(viper.GetString("server.readheadertimeout") + "s")
 	tmphttpreadtimeout, _ := time.ParseDuration(viper.GetString("server.readtimeout") + "s")
@@ -85,10 +99,11 @@ func main() {
 
 }
 
-func Routing(router *gin.Engine, db *sql.DB) {
+func Routing(router *gin.Engine, dbs helper.DBStruct) {
 	// Root static
 	router.Static("/img-storage", "./asset/img")
 	router.Static("/asset", "./views/static")
+	router.Static("/asset-barang", "./views/static/asset/image/barang")
 	// Load HTML
 	router.LoadHTMLGlob("views/html/*/*.html")
 
@@ -101,14 +116,21 @@ func Routing(router *gin.Engine, db *sql.DB) {
 	{
 		routeAuth.POST("login", func(c *gin.Context) { controllers.Login(c) })
 	}
+	// CLIENT
 	routeClient := router.Group("client")
 	{
-		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c, db) })
-		routeClient.GET("get-catalog", func(c *gin.Context) { controllers.GetCatalog(c, db) })
+		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c, dbs) })
 		routeClient.GET("jadwal", func(c *gin.Context) { controllers.ClientJadwal(c) })
 		routeClient.GET("status", func(c *gin.Context) { controllers.ClientStatus(c) })
 		routeClient.GET("transaksi", func(c *gin.Context) { controllers.ClientTransaksi(c) })
 	}
+	routeHome := router.Group("home/api")
+	{
+		routeHome.GET("get-catalog", func(c *gin.Context) { controllers.GetCatalog(c, dbs) })
+	}
+
+
+	// ADMIN
 	routeAdmin := router.Group("admin")
 	{
 		routeAdmin.GET("", func(c *gin.Context) { controllers.AdminDashboard(c) })

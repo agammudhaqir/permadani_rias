@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="352.331" height="178.988" viewBox="0 0 352.331 178.988">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.428" y1="-0.36" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#46b5ff"/>
+      <stop offset="0.854" stop-color="#4184d9"/>
+      <stop offset="1" stop-color="#3581c3"/>
+    </linearGradient>
+    <filter id="Permadani" x="62.742" y="2.849" width="246" height="126" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="R_AS" x="183.742" y="74.849" width="104" height="27" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(-455.258 -534.151)">
+    <g id="Group_3" data-name="Group 3" transform="translate(-482 338)">
+      <path id="Path_1" data-name="Path 1" d="M504.641,491.022c-60.982-3.7,207.84-130.5,324.259,8.1,37.9,45.122,10.667,40.533-5.333,45.867-16.8.8-17.067,62.933-26.667,52.533-8-144.8-268.236,61.666-270.084,6.228S565.622,494.718,504.641,491.022Z" transform="translate(441.5 -238.317)" fill="url(#linear-gradient)"/>
+      <g id="Group_1" data-name="Group 1">
+        <g transform="matrix(1, 0, 0, 1, 937.26, 196.15)" filter="url(#Permadani)">
+          <text id="Permadani-2" data-name="Permadani" transform="translate(68.74 96.85)" fill="#fff" font-size="110" font-family="BetterGrade, Better Grade"><tspan x="0" y="0">Permadani</tspan></text>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 937.26, 196.15)" filter="url(#R_AS)">
+        <text id="R_AS-2" data-name="R AS" transform="translate(189.74 88.85)" fill="#fff" font-size="11" font-family="MicrosoftYaHei-Bold, Microsoft YaHei" font-weight="700" letter-spacing="2em"><tspan x="0" y="0">R AS</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

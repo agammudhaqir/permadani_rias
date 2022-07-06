@@ -7,8 +7,9 @@
 
       <div class="col-12 col-sm-4 d-flex align-items-center">
         <div class="btn-group btn-group-sm btn-group-toggle d-inline-flex mb-4 mb-sm-0 mx-auto nav nav-tabs" role="group" aria-label="Page actions">
-          <a data-toggle="tab" href="#user_info" role="tab" aria-controls="user_info" aria-selected="true" class="btn btn-white active"> Panggung </a>
-          <a data-toggle="tab" href="#user2_info" role="tab" aria-controls="user2_info" aria-selected="true" class="btn btn-white"> Dekorasi </a>
+          <a data-toggle="tab" href="#tab-panggung" role="tab" aria-controls="tab-panggung" aria-selected="true" class="btn btn-white active"> Panggung </a>
+          <a data-toggle="tab" href="#tab-tenda" role="tab" aria-controls="tab-tenda" aria-selected="true" class="btn btn-white "> Tenda </a>
+          <a data-toggle="tab" href="#tab-dekorasi" role="tab" aria-controls="tab-dekorasi" aria-selected="true" class="btn btn-white"> Dekorasi </a>
         </div>
       </div>
       
@@ -19,89 +20,57 @@
     <!-- End Page Header -->
     <!-- Small Stats Blocks -->
     <div class="tab-content">
-      <div class="tab-pane p-0 pt-2 active" id="user_info" role="tabpanel" style="overflow-y: auto;overflow-x: hidden;">  
+      <div class="tab-pane p-0 pt-2 active" id="tab-panggung" role="tabpanel" style="overflow-y: auto;overflow-x: hidden;">  
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="stats-small card card-small">
-              <div class="card-body px-0 pb-0">
-                <div class="d-flex px-3">
-                  <div class="stats-small__data">
-                    <span class="stats-small__label mb-1 text-uppercase">Users</span>
-                    <h6 class="stats-small__value count m-0">2,390</h6>
-                  </div>
-                  <div class="stats-small__data text-right align-items-center">
-                    <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                  </div>
-                </div>
-                <canvas height="60" class="analytics-overview-stats-small-1"></canvas>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card card-small card-post card-post--1">
+              <div class="card-post__image" style="background-image: url('{{.base_url}}asset-barang/dekorasi/Dekorasi-4x4.png');">
+                <a href="#" class="card-post__category badge badge-pill badge-dark">Business</a>
               </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="stats-small card card-small">
-              <div class="card-body px-0 pb-0">
-                <div class="d-flex px-3">
-                  <div class="stats-small__data">
-                    <span class="stats-small__label mb-1 text-uppercase">Sessions</span>
-                    <h6 class="stats-small__value count m-0">8,391</h6>
-                  </div>
-                  <div class="stats-small__data text-right align-items-center">
-                    <span class="stats-small__percentage stats-small__percentage--decrease">7.21%</span>
-                  </div>
-                </div>
-                <canvas height="60" class="analytics-overview-stats-small-2"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="stats-small card card-small">
-              <div class="card-body px-0 pb-0">
-                <div class="d-flex px-3">
-                  <div class="stats-small__data">
-                    <span class="stats-small__label mb-1 text-uppercase">Pageviews</span>
-                    <h6 class="stats-small__value count m-0">21,293</h6>
-                  </div>
-                  <div class="stats-small__data text-right align-items-center">
-                    <span class="stats-small__percentage stats-small__percentage--increase">3.71%</span>
-                  </div>
-                </div>
-                <canvas height="60" class="analytics-overview-stats-small-3"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="stats-small card card-small">
-              <div class="card-body px-0 pb-0">
-                <div class="d-flex px-3">
-                  <div class="stats-small__data">
-                    <span class="stats-small__label mb-1 text-uppercase">Pages / Session</span>
-                    <h6 class="stats-small__value count m-0">6.43</h6>
-                  </div>
-                  <div class="stats-small__data text-right align-items-center">
-                    <span class="stats-small__percentage stats-small__percentage--decrease">2,71%</span>
-                  </div>
-                </div>
-                <canvas height="60" class="analytics-overview-stats-small-4"></canvas>
+              <div class="card-body p-3">
+                <h5 class="card-title">
+                  <a class="text-fiord-blue" href="#" style="font-size: 18px;">Dekorasi 4 x 10</a>
+                </h5>
+                <p class="card-text d-inline-block mb-3" style="font-size: 10px;">However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...</p>
+                <span class="text-muted">28 February 2019</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane p-0 pt-2" id="user2_info" role="tabpanel" style="overflow-y: auto;overflow-x: hidden;">
+
+      <div class="tab-pane p-0 pt-2" id="tab-tenda" role="tabpanel" style="overflow-y: auto;overflow-x: hidden;">  
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <div class="stats-small card card-small">
-              <div class="card-body px-0 pb-0">
-                <div class="d-flex px-3">
-                  <div class="stats-small__data">
-                    <span class="stats-small__label mb-1 text-uppercase">Users</span>
-                    <h6 class="stats-small__value count m-0">2,390</h6>
-                  </div>
-                  <div class="stats-small__data text-right align-items-center">
-                    <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                  </div>
-                </div>
-                <canvas height="60" class="analytics-overview-stats-small-1"></canvas>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card card-small card-post card-post--1">
+              <div class="card-post__image" style="background-image: url('{{.base_url}}asset-barang/dekorasi/Dekorasi-5x7.jpg');">
+                <a href="#" class="card-post__category badge badge-pill badge-dark">Business</a>
+              </div>
+              <div class="card-body p-3">
+                <h5 class="card-title">
+                  <a class="text-fiord-blue" href="#" style="font-size: 18px;">Dekorasi 4 x 10</a>
+                </h5>
+                <p class="card-text d-inline-block mb-3" style="font-size: 10px;">However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...</p>
+                <span class="text-muted">28 February 2019</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane p-0 pt-2" id="tab-dekorasi" role="tabpanel" style="overflow-y: auto;overflow-x: hidden;">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card card-small card-post card-post--1">
+              <div class="card-post__image" style="background-image: url('{{.base_url}}asset-barang/dekorasi/Dekorasi-4x4.png');">
+                <a href="#" class="card-post__category badge badge-pill badge-dark">Business</a>
+              </div>
+              <div class="card-body p-3">
+                <h5 class="card-title">
+                  <a class="text-fiord-blue" href="#" style="font-size: 18px;">Dekorasi 4 x 10</a>
+                </h5>
+                <p class="card-text d-inline-block mb-3" style="font-size: 10px;">However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...</p>
+                <span class="text-muted">28 February 2019</span>
               </div>
             </div>
           </div>

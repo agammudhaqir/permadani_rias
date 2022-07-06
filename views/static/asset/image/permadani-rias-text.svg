@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="246" height="126" viewBox="0 0 246 126">
+  <defs>
+    <filter id="Permadani" x="0" y="0" width="246" height="126" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="R_AS" x="121" y="72" width="104" height="27" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(-1003 -393)">
+    <g id="Group_1" data-name="Group 1" transform="translate(3 194)">
+      <g transform="matrix(1, 0, 0, 1, 1000, 199)" filter="url(#Permadani)">
+        <text id="Permadani-2" data-name="Permadani" transform="translate(6 94)" fill="#1382e3" font-size="110" font-family="BetterGrade, Better Grade"><tspan x="0" y="0">Permadani</tspan></text>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1003, 393)" filter="url(#R_AS)">
+      <text id="R_AS-2" data-name="R AS" transform="translate(127 86)" fill="#1382e3" font-size="11" font-family="MicrosoftYaHei-Bold, Microsoft YaHei" font-weight="700" letter-spacing="2em"><tspan x="0" y="0">R AS</tspan></text>
+    </g>
+  </g>
+</svg>

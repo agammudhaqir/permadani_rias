@@ -38,8 +38,8 @@ func HeaderTemplateClient() string {
 				  <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
 					<a class="navbar-brand" href="#" style="line-height: 25px;">
 					  <div class="d-table m-auto">
-						<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 25px;" src="` + base_url + `asset/shard/images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-						<span class="d-none d-md-inline ml-1">Shards Dashboard</span>
+						<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 80px;" src="` + base_url + `asset/asset/image/permadani-rias-logo.svg" alt="Shards Dashboard">
+						<!-- <span class="d-none d-md-inline ml-1">Shards Dashboard</span> -->
 					  </div>
 					</a>
 					<form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
