@@ -1,0 +1,15 @@
+
+.nav-item a{
+    color: #428fe1;
+}
+.text-info{
+    color:#428fe1 !important;
+}
+.bg-info{
+    background-color:#428fe1 !important;
+}
+.btn-info {
+    color: #212529;
+    background-color: #428fe1 ;
+    border-color: #428fe1 ;
+}

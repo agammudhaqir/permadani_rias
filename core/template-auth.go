@@ -22,8 +22,9 @@ func HeaderAuth()string{
 			
 			<!-- Style -->
 			<link rel="stylesheet" href="`+ base_url +`asset/shard/login/css/style.css">
+			<link rel="stylesheet" href="` + base_url + `asset/asset/css/global.css">
 		
-			<title>Login #8</title>
+			<title>PMR | Login</title>
 		</head>
 		<body>
 	`

@@ -1,17 +1,61 @@
 	
     {{.headerAuth}}
-	<div class="content">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 order-md-2">
-					<img src="{{.base_url}}asset/shard/login/images/panggung.jpg" alt="Image" class="img-fluid">
+	<style>
+		.absolute-label{
+			position: absolute;
+			right: 35px;
+			top: 45px;
+		}
+		.shadow-default{
+			box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.42);
+			-webkit-box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.42);
+			-moz-box-shadow: 0px 3px 12px 0px rgba(0,0,0,0.42);
+		}
+	</style>
+	<div class="container-fluid" style="height:100%; background: linear-gradient(90deg, rgba(22,175,255,1) 0%, rgba(65,141,193,1) 100%, rgba(52,213,219,1) 100%, rgba(0,212,255,1) 100%);">
+		<div class="container" style="padding: 7rem;">
+			<div class="row shadow-default" style="height: 70vh;">
+				<div class="col-md-6 p-0" style="background-color: #ffffff;">
+					<div class="container align-items-center" style="text-align: center; margin-top: 60px;">
+						<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 140px;" src="{{.base_url}}asset/asset/image/permadani-rias-logo.svg" alt="Shards Dashboard">
+					</div>
+					<div class="container align-items-center" style="padding: 2rem;">
+						<form id="form-login" method="POST" action="javascript:void(0);">
+							<div class="form-group first">
+								<label for="username">Username</label>
+								<input type="text" class="form-control" id="email" name="email" required style="border-radius: 30px;">
+							</div>
+							<div class="form-group last mb-4">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" name="password" required style="border-radius: 30px;">
+								
+							</div>
+							
+							<div class="d-flex mb-5 align-items-center">
+								<label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+									<input type="checkbox" checked="checked"/>
+									<div class="control__indicator"></div>
+								</label>
+								<span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+							</div>
+	
+							<input type="submit" value="Log In" class="btn text-white btn-block btn-info" style="border-radius: 30px;">
+						</form>
+					</div>
 				</div>
-				<div class="col-md-6 contents">
-					<div class="row justify-content-center">
-						<div class="col-md-8">
+				<div class="col-md-6 p-0" style="background-color: #48D6CD;">
+					<img id="main-logo" class="d-inline-block align-top h-100" style="max-width: 191px; margin-left: -1px;" src="{{.base_url}}asset/asset/image/vector-devider.svg" alt="Shards Dashboard">
+					<div class="mb-4 absolute-label" >
+						<h4 style="color: white;">Sign In to <strong>Permadani Rias</strong></h4>
+						<p style="width:316px; color: black;" class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+					</div>
+					<div class="row">
+						<div class="col-md-5"></div>
+						<!-- <div class="col-md-8">
 							<div class="mb-4">
 								<h3>Sign In to <strong>Permadani Rias {{.ciri}}</strong></h3>
 								<p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+								<img id="main-logo" class="d-inline-block align-top mr-1 ml-3" style="max-width: 80px;" src="{{.base_url}}asset/asset/image/permadani-rias-logo.svg" alt="Shards Dashboard">
 							</div>
 							<form id="form-login" method="POST" action="javascript:void(0);">
 								<div class="form-group first">
@@ -33,23 +77,9 @@
 									<span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
 								</div>
 
-								<input type="submit" value="Log In" class="btn text-white btn-block btn-primary">
-
-								<span class="d-block text-left my-4 text-muted"> or sign in with</span>
-								
-								<div class="social-login">
-									<a href="#" class="facebook">
-										<span class="icon-facebook mr-3"></span> 
-									</a>
-									<a href="#" class="twitter">
-										<span class="icon-twitter mr-3"></span> 
-									</a>
-									<a href="#" class="google">
-										<span class="icon-google mr-3"></span> 
-									</a>
-								</div>
+								<input type="submit" value="Log In" class="btn text-white btn-block btn-info">
 							</form>
-						</div>
+						</div> -->
 					</div>
 				
 				</div>

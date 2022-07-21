@@ -26,6 +26,7 @@ func HeaderTemplateClient() string {
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="` + base_url + `asset/shard/styles/shards-dashboards.1.1.0.min.css">
 		<link rel="stylesheet" href="` + base_url + `asset/shard/styles/extras.1.3.1.min.css">
+		<link rel="stylesheet" href="` + base_url + `asset/asset/css/global.css">
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 	  </head>
 	  <body class="h-100">
@@ -87,18 +88,22 @@ func HeaderTemplateClient() string {
 						</div>
 					  </li>
 					  <li class="nav-item dropdown m-auto">
-						
-						<?=$portal?>
-						
-						<!-- <div class="dropdown-menu dropdown-menu-small">
-						  <a class="dropdown-item" href="user-profile.html"><i class="material-icons">&#xE7FD;</i> Profile</a>
-						  <a class="dropdown-item" href="edit-user-profile.html"><i class="material-icons">&#xE8B8;</i> Edit Profile</a>
-						  <a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons">&#xE2C7;</i> Files</a>
-						  <a class="dropdown-item" href="transaction-history.html"><i class="material-icons">&#xE896;</i> Transactions</a>
-						  <div class="dropdown-divider"></div>
-						  <a class="dropdown-item text-danger" href="#">
+					  	<a class="nav-link  text-nowrap px-3"  href="` + base_url + `" role="button" >
+							<i class="fa fa-user"></i><span class="d-none d-md-inline-block" style="font-size:15px !important;font-weight:bold !important">Login</span>
+						</a>
+					  	<!-- <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img class="user-avatar rounded-circle mr-2" src="` + base_url + `asset/shard/images/avatars/0.jpg" alt="User Avatar"> 
+							<span class="d-none d-md-inline-block">Sierra Brooks</span>
+						</a> -->
+						<div class="dropdown-menu dropdown-menu-small">
+							<a class="dropdown-item" href="user-profile.html"><i class="material-icons">&#xE7FD;</i> Profile</a>
+							<a class="dropdown-item" href="edit-user-profile.html"><i class="material-icons">&#xE8B8;</i> Edit Profile</a>
+							<a class="dropdown-item" href="file-manager-cards.html"><i class="material-icons">&#xE2C7;</i> Files</a>
+							<a class="dropdown-item" href="transaction-history.html"><i class="material-icons">&#xE896;</i> Transactions</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item text-danger" href="'.$base_url.'auth/logout">
 							<i class="material-icons text-danger">&#xE879;</i> Logout </a>
-						</div> -->
+						</div>
 					  </li>
 					</ul>
 					<nav class="nav">
@@ -113,7 +118,7 @@ func HeaderTemplateClient() string {
 				<div class="container">
 				  <div class="row">
 					<div class="col">
-					  <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+					  <ul class="nav nav-tabs border-0 flex-column flex-lg-row" id="container-menu">
 						<li class="nav-item dropdown">
 						  <a class="nav-link" data-toggle="dropdown"><i class="material-icons">&#xE2C7;</i> Dashboards</a>
 						  <div class="dropdown-menu dropdown-menu-small">
@@ -124,7 +129,7 @@ func HeaderTemplateClient() string {
 						</li>
 
 						<li class="nav-item">
-						  <a href="` + base_url + `client" class="nav-link active"><i class="material-icons">view_day</i> Catalog</a>
+						  <a href="` + base_url + `client" class="nav-link"><i class="material-icons">view_day</i> Catalog</a>
 						</li>
 
 						<li class="nav-item">
@@ -198,6 +203,7 @@ func FooterTemplateClient() string {
 		<script src="` + base_url + `asset/shard/scripts/extras.1.3.1.min.js"></script>
 		<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.3.1.min.js"></script>
 		<script src="` + base_url + `asset/shard/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
+		<script src="` + base_url + `asset/asset/js/globalClient.js"></script>
 		</body>
 		</html>
 	`
