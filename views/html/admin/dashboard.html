@@ -1,5 +1,8 @@
 {{.headerAdmin}}
+
+
 <style>
+    
     .text_dot {
       display: block;/* or inline-block */
       text-overflow: ellipsis;
@@ -11,189 +14,384 @@
     .card-post__image{
       min-height: 7.3125rem !important;
     }
+    .date-range{
+      margin-bottom: 0px;
+      font-size: 10px;
+      margin-top: 10px;
+      color: #98a096;
+    }
+    .card-dashboard-icon{
+      color: #00b7d7;
+      font-size: 20px !important;
+      background-color: #c5e9f0;
+      padding: 13px;
+      border-radius: 8px;
+    }
   </style>
-  <div class="main-content-container container-fluid px-4">
+  <div class="main-content-container container-fluid p-4 ">
   
-      <div class="page-header row no-gutters py-4 mb-3">
-        <div class="col-4 col-sm-4 text-center text-sm-left ">
-          <!-- <span class="text-uppercase page-subtitle">Dashboard</span>
-          <h3 class="page-title">Blog Overview</h3> -->
-        </div>
-        <div class="col-4 col-sm-4 text-center text-sm-left mb-0">
-          <div class="stats-small stats-small--1 card card-small" style="min-height: 2.7rem !important;">
-            <div class="card-body p-0 d-flex">
-              <div class="d-flex flex-column m-auto">
-                <!-- <div class="stats-small__data text-center">
-                  <span class="stats-small__label text-uppercase">Posts</span>
-                  <h6 class="stats-small__value count my-3">2,390</h6>
-                </div>
-                <div class="stats-small__data">
-                  <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                </div> -->
-                <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
-                  <div class="input-group input-group-seamless" style="min-width: 24.5rem !important;">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                      <i class="fas fa-search"></i>
-                      </div>
-                    </div>
-                    <input class="navbar-search form-control" id="search-widget" type="text" placeholder="Search for something..." aria-label="Search" style="border: none;" autocomplete="off"> 
-                  </div>
-                </form>
+    <div class="row">
+  
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow  py-2">
+          <div class="card-body px-3 py-2">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-info mb-1 font-comfortaa" style="font-size: 12px;">Dalam Pembayaran</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800 font-taviraj" style="font-size:25px;" id="card_proses">30</div>
               </div>
+              <div class="col-auto">
+                <i class="material-icons card-dashboard-icon">payments</i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <p class="date-range"><i class="material-icons">schedule</i> 12-30-2022 s/d 12-30-2022</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Page Header -->
-      <!-- Small Stats Blocks -->
-      <div class="row my-shuffle-container">
-        
-      </div>
-      <div class="row">
-  
-              <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dalam Proses</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="card_proses">3</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <!-- END -->
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow  py-2">
+          <div class="card-body px-3 py-2">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-info mb-1 font-comfortaa" style="font-size: 12px;">Dalam Pengesahan</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800 font-taviraj" style="font-size:25px;" id="card_proses">100</div>
               </div>
-  
-              <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Dalam Pemesanan</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="card_pemesanan">10</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Earnings (Monthly) Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-info shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Pelanggan / tahun</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="card_pemesanan">160</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Pending Requests Card Example -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Pembatalan</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="card_total_pembatalan">12</div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-auto">
+                <i class="material-icons card-dashboard-icon">handshake</i>
               </div>
             </div>
-            <div class="row">
-  
-              <!-- Area Chart -->
-              <div class="col-xl-8 col-lg-7">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-card-blue d-flex">Statistik Bulanan</h6>
-                    <div class="input-group d-flex ">
-                        <!-- <form id="pick_form" > -->
-                        <input name="tahun" id="tahun" type="number" placeholder="YYYY" min="2017"  class="form-control" required >
-                        <div class="input-group-append" >
-                            <button class="btn btn-outline-primary" id="btn_tahun"  type="submit">Pilih Tahun</button>
-                        </div>
-                        <!-- </form> -->
-                    </div>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-area">
-                      <canvas id="myAreaChart"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Pie Chart -->
-              <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-card-blue">Presentase alat yang di sewa</h6>
-                    <div class="dropdown no-arrow">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                      <canvas id="myPieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                      <span class="mr-2">
-                        <i class="fas fa-circle text-primary"></i> Panggung 
-                      </span>
-                      <span class="mr-2">
-                        <i class="fas fa-circle text-success"></i> Tenda 
-                      </span>
-                      <span class="mr-2">
-                        <i class="fas fa-circle text-info"></i> Dekorasi 
-                      </span><br>
-                      <span class="mr-2">
-                        <i class="fas fa-circle text-secondary"></i> Cinderamata
-                      </span>
-                      <span class="mr-2">
-                        <i class="fas fa-circle text-dark"></i> Undangan
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="d-flex">
+              <p class="date-range"><i class="material-icons">schedule</i> 12-30-2022 s/d 12-30-2022</p>
             </div>
-  
           </div>
+        </div>
+      </div>
+      <!-- END -->
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow  py-2">
+          <div class="card-body px-3 py-2">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-info mb-1 font-comfortaa" style="font-size: 12px;">Dalam Proses</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800 font-taviraj" style="font-size:25px;" id="card_proses">320</div>
+              </div>
+              <div class="col-auto">
+                <i class="material-icons card-dashboard-icon">sync</i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <p class="date-range"><i class="material-icons">schedule</i> 12-30-2022 s/d 12-30-2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+      <!-- Earnings (Monthly) Card Example -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow  py-2">
+          <div class="card-body px-3 py-2">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-info mb-1 font-comfortaa" style="font-size: 12px;">Selesai</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800 font-taviraj" style="font-size:25px;" id="card_proses">20</div>
+              </div>
+              <div class="col-auto">
+                <i class="material-icons card-dashboard-icon">task_alt</i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <p class="date-range"><i class="material-icons">schedule</i> 12-30-2022 s/d 12-30-2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+
+      
+    </div>
+    <div class="row">
+
+      <!-- Area Chart -->
+      <div class="col-xl-8 col-lg-7">
+        <div class="card shadow">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-card-blue d-flex font-comfortaa">Statistik Keuangan</h6>
+            <input type="text" class="form-control form-control-sm" style="width: 270px; z-index: 99;" id="date-range-pendapatan" />
+          </div>
+          <!-- Card Body -->
+          <div class="card-body p-3">
+            <div id="chart-keuangan" style="width: 100%;height:380px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="col-xl-4 col-lg-5">
+        <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-card-blue">Statistik barang sewa</h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <input type="text" class="form-control form-control-sm" style="width: 270px; z-index: 99;" id="date-range-barang" />
+              </div>
+            </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body p-3">
+            <div id="chart-barang" style="width: 100%;height:380px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
   
   </div>
   {{.footerAdmin}}
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.js"></script>
+  <script src="{{.base_url}}asset/asset/echart/walden.js"></script>
+  <script>
+    $('#date-range-pendapatan').daterangepicker({
+        opens: 'left',
+        timePicker: true,
+        timePicker24Hour: true,
+        locale: {
+            format: 'DD/MM/YYYY HH:mm'
+        }
+    });
+    $('#date-range-barang').daterangepicker({
+        opens: 'left',
+        timePicker: true,
+        timePicker24Hour: true,
+        locale: {
+            format: 'DD/MM/YYYY HH:mm'
+        }
+    });
+
+    $('document').ready(function(params) {
+      chartKeuangan()
+      chartBarang()
+    })
+
+    function chartBarang(params) {
+
+      var chartDom = document.getElementById('chart-barang');
+      var myChart = echarts.init(chartDom,'walden');
+      var option;
+
+      option = {
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          top: '2%',
+          left: 'center'
+        },
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 5,
+              borderColor: '#fff',
+              borderWidth: 2
+            },
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: '15',
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [
+              { value: 1048, name: 'Search Engine'},
+              { value: 735, name: 'Direct' },
+              { value: 580, name: 'Email' },
+            ]
+          }
+        ]
+      };
+
+      option && myChart.setOption(option);
+
+    }
+    function chartKeuangan(params) {
+      var app = {};
+      var chartDom = document.getElementById('chart-keuangan');
+      var myChart = echarts.init(chartDom,'walden tg   yg');
+      var option;
+
+      const posList = [
+        'left',
+        'right',
+        'top',
+        'bottom',
+        'inside',
+        'insideTop',
+        'insideLeft',
+        'insideRight',
+        'insideBottom',
+        'insideTopLeft',
+        'insideTopRight',
+        'insideBottomLeft',
+        'insideBottomRight'
+      ];
+      app.configParameters = {
+        rotate: {
+          min: -90,
+          max: 90
+        },
+        align: {
+          options: {
+            left: 'left',
+            center: 'center',
+            right: 'right'
+          }
+        },
+        verticalAlign: {
+          options: {
+            top: 'top',
+            middle: 'middle',
+            bottom: 'bottom'
+          }
+        },
+        position: {
+          options: posList.reduce(function (map, pos) {
+            map[pos] = pos;
+            return map;
+          }, {})
+        },
+        distance: {
+          min: 0,
+          max: 100
+        }
+      };
+      app.config = {
+        rotate: 90,
+        align: 'left',
+        verticalAlign: 'middle',
+        position: 'insideBottom',
+        distance: 15,
+        onChange: function () {
+          const labelOption = {
+            rotate: app.config.rotate,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            position: app.config.position,
+            distance: app.config.distance
+          };
+          myChart.setOption({
+            series: [
+              {
+                label: labelOption
+              },
+              {
+                label: labelOption
+              },
+              {
+                label: labelOption
+              },
+              {
+                label: labelOption
+              }
+            ]
+          });
+        }
+      };
+      const labelOption = {
+        show: true,
+        position: app.config.position,
+        distance: app.config.distance,
+        align: app.config.align,
+        verticalAlign: app.config.verticalAlign,
+        rotate: app.config.rotate,
+        formatter: '{c}  {name|{a}}',
+        fontSize: 16,
+        rich: {
+          name: {}
+        }
+      };
+      option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        legend: {
+          data: ['Forest', 'Wetland']
+        },
+        toolbox: {
+          show: true,
+          orient: 'vertical',
+          left: 'right',
+          top: 'center',
+          feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            magicType: { show: true, type: ['line', 'bar', 'stack'] },
+            restore: { show: true },
+            saveAsImage: { show: true }
+          }
+        },
+        xAxis: [
+          {
+            type: 'category',
+            axisTick: { show: false },
+            data: ['2012', '2013', '2014', '2015', '2016']
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            name: 'Forest',
+            type: 'bar',
+            barGap: 0,
+            label: labelOption,
+            emphasis: {
+              focus: 'series'
+            },
+            data: [320, 332, 301, 334, 390]
+          },
+          {
+            name: 'Wetland',
+            type: 'bar',
+            label: labelOption,
+            emphasis: {
+              focus: 'series'
+            },
+            data: [98, 77, 101, 99, 40]
+          }
+        ]
+      };
+
+      option && myChart.setOption(option);
+
+    }
+  </script>
+
   

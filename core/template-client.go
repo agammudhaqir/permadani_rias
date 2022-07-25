@@ -28,6 +28,21 @@ func HeaderTemplateClient() string {
 		<link rel="stylesheet" href="` + base_url + `asset/shard/styles/extras.1.3.1.min.css">
 		<link rel="stylesheet" href="` + base_url + `asset/asset/css/global.css">
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<style>
+			.text-info{
+				color: #428fe1;
+			}
+			.bg-info{
+				background-color: #428fe1;
+				color: white;
+			}
+			.btn-white:not([disabled]):not(.disabled).active{
+				box-shadow: none!important;
+				background-color: #428fe1;
+				border-color: #428fe1;
+				color: #fff;
+			}
+		</style>
 	  </head>
 	  <body class="h-100">
 		<div class="container-fluid">

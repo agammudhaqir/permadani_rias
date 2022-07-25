@@ -10,7 +10,7 @@ func HeaderTemplateAdmin() string {
 	  <head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Semen Indonesia Goup</title>
+		<title>Permadani Rias</title>
 		<meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -22,8 +22,76 @@ func HeaderTemplateAdmin() string {
 		<link rel="stylesheet" href="` + base_url + `asset/shard/datatable/dataTables.bootstrap4.min.css">
 		<link rel="stylesheet" href="` + base_url + `asset/shard/datatable/responsive.dataTables.min.css">
 		<link rel="stylesheet" href="` + base_url + `asset/shard/datatable/fixedColumns.dataTables.min.css">
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<link rel="stylesheet" href="` + base_url + `asset/asset/jquery-3.6.0/jquery-ui.css">
+		<link rel="stylesheet" href="` + base_url + `asset/asset/daterangepicker/daterangepicker.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Taviraj">
+		<style>
+			.font-shofia{
+				font-family: 'Sofia', sans-serif;
+			}
+			.font-comfortaa{
+				font-family: "Comfortaa", sans-serif;
+			}
+			.nav-link{
+				font-family: "Comfortaa", sans-serif !important;
+			}
+			.font-taviraj{
+				font-family: "Taviraj", sans-serif !important;
+			}
+			.cart-absolute{
+				position: absolute;
+				bottom: 105px;
+				right: 21px;
+			}
+			.material-symbols-outlined {
+				font-variation-settings:
+				'FILL' 0,
+				'wght' 400,
+				'GRAD' 0,
+				'opsz' 48
+			}
+			.card-small{
+				box-shadow: rgb(0 0 0 / 12%) 0px 1px 6px 0px;
+			}
+			.card-barang:hover{
+				box-shadow: 0 2px 0 rgb(90 30 74 / 0%), 0 4px 8px rgb(90 97 105 / 15%), 0 10px 10px rgb(90 97 105 / 0%), 0 7px 63px rgb(56 97 54 / 0%);
+			}
+				/* width */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #f1f1f1; 
+			}
+			
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #888; 
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555; 
+			}
+			.main-sidebar .nav .nav-item .nav-link.active{
+				color: #428fe1;
+				box-shadow: inset 0.1875rem 0 0 #428fe1;
+				background-color: #fbfbfb;
+			}
+			.main-sidebar .nav .nav-item .nav-link.active i{
+				color: #428fe1;
+			}
+			.text-info{
+				color: #428fe1;
+			}
+			.main-sidebar .nav .nav-item, .main-sidebar .nav .nav-link{
+				font-size:13px !important;
+			}
+			</style>
 		
 	  </head>
 	  <body class="h-100">
@@ -36,13 +104,8 @@ func HeaderTemplateAdmin() string {
 			  <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
 				<div class="d-flex justify-content-center align-items-center w-100">
 				  <div class="mr-2">
-					<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="` + base_url + `asset/asset/admin/images/LogoJust.png" alt="Shards Dashboard">
+					<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 92px;" src="` + base_url + `asset/asset/image/permadani-rias-logo.svg" alt="Shards Dashboard">
 				  </div>
-				  <!-- <div class="d-flex" style="flex-direction: column; line-height: 16px;">
-					<span>Permadani</span>
-					<span>Rias</span>
-				  </div> -->
-				  <span class="d-none d-md-inline ml-1">Permadani Rias</span>
 				</div>
 			  </a>
 			  <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -71,19 +134,19 @@ func HeaderTemplateAdmin() string {
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link " href="` + base_url + `admin/data-penyewaan">
-					  <i class="material-icons">dashboard</i>
-					  <span>Dashboard</span>
+					  <i class="material-icons">analytics</i>
+					  <span>Data Penyewaan</span>
 					</a>
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link " href="` + base_url + `admin/transaksi">
-					  <i class="material-icons">dashboard</i>
+					  <i class="material-icons">receipt_long</i>
 					  <span>Transaksi</span>
 					</a>
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link " href="` + base_url + `admin/data-jadwal">
-					  <i class="material-icons">dashboard</i>
+					  <i class="material-icons">event_available</i>
 					  <span>Manage jadwal</span>
 					</a>
 				  </li>
@@ -103,7 +166,7 @@ func HeaderTemplateAdmin() string {
 				  </li>
 				  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  <i class="material-icons">vertical_split</i>
+					  <i class="material-icons">account_balance</i>
 					  <span class="list-menu">Keuangan</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-small" role="menu" aria-labelledby="dLabel">
@@ -236,7 +299,7 @@ func HeaderTemplateAdmin() string {
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar"> <span class="d-none d-md-inline-block">Sierra Brooks</span>
+                    <img class="user-avatar rounded-circle mr-2" src="` + base_url + `asset/shard/images/avatars/zoro.jpg" alt="User Avatar"> <span class="d-none d-md-inline-block">Sierra Brooks</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
                     <a class="dropdown-item" href="user-profile-lite.html"><i class="material-icons"></i> Profile</a>
@@ -264,19 +327,25 @@ func FooterTemplateAdmin() string {
 	html := `
 		</body>
 		</html>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-			<script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-			<script src="` + base_url + `asset/shard/scripts/extras.1.1.0.min.js"></script>
-			<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.1.0.min.js"></script>
-			<script src="` + base_url + `asset/shard/scripts/app/app-blog-overview.1.1.0.js"></script>
-			<script src="` + base_url + `asset/asset/js/global.js"></script>
-			<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-			<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-			<script src="https://cdn.datatables.net/fixedcolumns/4.0.0/js/dataTables.fixedColumns.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<script src="` + base_url + `asset/asset/jquery-3.6.0/jquery-3.6.0.min.js" ></script>
+		<script src="` + base_url + `asset/asset/jquery-3.6.0/jquery-ui.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+		<script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script src="` + base_url + `asset/asset/daterangepicker/daterangepicker.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/extras.1.1.0.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.1.0.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/app/app-blog-overview.1.1.0.js"></script>
+		<script src="` + base_url + `asset/asset/js/global.js"></script>
+		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+		<script src="https://cdn.datatables.net/fixedcolumns/4.0.0/js/dataTables.fixedColumns.min.js"></script>
 	`
 	return html
 }
