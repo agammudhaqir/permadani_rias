@@ -1,18 +1,125 @@
 {{.headerAdmin}}
+<link href='{{.base_url}}asset/asset/calendar-event/lib/main.css' rel='stylesheet' />
 <style>
-    .text_dot {
-      display: block;/* or inline-block */
-      text-overflow: ellipsis;
-      word-wrap: break-word;
-      overflow: hidden;
-      max-height: 3.2em;
-      line-height: 1.6rem;
+    
+    .fc .fc-toolbar.fc-header-toolbar {
+        margin-bottom: 0.5rem;
     }
-    .card-post__image{
-      min-height: 7.3125rem !important;
+    .fc-toolbar-chunk{
+        font-size: 12px;
+    }
+    .fc .fc-toolbar-title {
+        font-size: 1.4em !important;
+        margin: 0;
+    }
+    .fc .fc-daygrid-day-number,.fc-h-event .fc-event-title,.fc .fc-col-header-cell-cushion,.fc-daygrid-dot-event .fc-event-title{
+        font-size: 12px;
     }
 </style>
-<div class="main-content-container container-fluid px-4">
-    <h1>{{.title_menu}}</h1>
-</div>
+    <div class="main-content-container container" id="main-container">
+        <!-- Page Header -->
+        <!-- <div class="page-header row no-gutters py-4">
+            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            </div>
+
+            <div class="col-12 col-sm-4 d-flex align-items-center">
+                <h1>Jadwal</h1>
+            </div>
+            
+            <div class="col-12 col-sm-4 d-flex align-items-center">
+                
+            </div>
+        </div> -->
+        <!-- End Page Header -->
+        <!-- Small Stats Blocks -->
+        
+        
+        <!-- End Small Stats Blocks -->
+        <div class="container py-2">
+            <div id="calendar-event"></div>
+        </div>
+    </div>
 {{.footerAdmin}}
+<script src='{{.base_url}}asset/asset/calendar-event/lib/main.js'></script>
+  <script>
+    const globalHeightDefault = $('body').height() - 165
+    $('#main-container').css('min-height',globalHeightDefault)
+    $('document').ready(function(params) {
+        calendarEvent()
+    })
+
+    function calendarEvent(params) {
+        var calendarEl = document.getElementById('calendar-event');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialDate: '2020-09-12',
+            editable: true,
+            selectable: true,
+            businessHours: true,
+            dayMaxEvents: true, // allow "more" link when too many events
+            height: 'auto',
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            selectable: true,
+            selectMirror: true,
+            nowIndicator: true,
+            events: [
+                {
+                title: 'All Day Event',
+                start: '2020-09-01',
+                },
+                {
+                title: 'Long Event',
+                start: '2020-09-07',
+                end: '2020-09-10'
+                },
+                {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2020-09-09T16:00:00'
+                },
+                {
+                groupId: 999,
+                title: 'Repeating Event',
+                start: '2020-09-16T16:00:00'
+                },
+                {
+                title: 'Conference',
+                start: '2020-09-11',
+                end: '2020-09-13'
+                },
+                {
+                title: 'Meeting',
+                start: '2020-09-12T10:30:00',
+                end: '2020-09-12T12:30:00'
+                },
+                {
+                title: 'Lunch',
+                start: '2020-09-12T12:00:00'
+                },
+                {
+                title: 'Meeting',
+                start: '2020-09-12T14:30:00'
+                },
+                {
+                title: 'Happy Hour',
+                start: '2020-09-12T17:30:00'
+                },
+                {
+                title: 'Dinner',
+                start: '2020-09-12T20:00:00'
+                },
+                {
+                title: 'Birthday Party',
+                start: '2020-09-13T07:00:00'
+                },
+                {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2020-09-28'
+                }
+            ]
+        });
+
+        calendar.render();
+    }
+  </script>

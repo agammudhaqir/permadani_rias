@@ -9,7 +9,6 @@ function activeMenu(params) {
         
         if ($(this).children().length > 1) {
             $(this).find('div').children().each(function(e,params) {
-                console.log(params);
                 if ($(params).attr('href') == url) {
                     $(params).addClass('active')
                     $(params2).addClass('show')

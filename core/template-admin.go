@@ -94,7 +94,7 @@ func HeaderTemplateAdmin() string {
 			</style>
 		
 	  </head>
-	  <body class="h-100">
+	  <body class="h-100" style="font-family: "Comfortaa", sans-serif !important;">
 		<div class="container-fluid">
 		<div class="row">
 		  <!-- Main Sidebar -->
