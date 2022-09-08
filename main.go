@@ -102,8 +102,7 @@ func main() {
 func Routing(router *gin.Engine, dbs helper.DBStruct) {
 	// Root static
 	router.Static("/img-storage", "./asset/img")
-	router.Static("/asset", "./views/static/asset")
-	router.Static("/asset-barang", "./views/static/asset/image/barang")
+	router.Static("/asset", "./views/static")
 	// Load HTML
 	router.LoadHTMLGlob("views/html/*/*.html")
 
@@ -134,9 +133,8 @@ func Routing(router *gin.Engine, dbs helper.DBStruct) {
 	routeAdmin := router.Group("admin")
 	{
 		routeAdmin.GET("", func(c *gin.Context) { controllers.AdminDashboard(c) })
-		routeAdmin.GET("data-dekorasi", func(c *gin.Context) { controllers.DataDekorasi(c) })
+		routeAdmin.GET("data-barang", func(c *gin.Context) { controllers.DataBarang(c) })
 		routeAdmin.GET("data-penyewaan", func(c *gin.Context) { controllers.DataPenyewaan(c) })
-		routeAdmin.GET("data-panggung", func(c *gin.Context) { controllers.DataPanggung(c) })
 		routeAdmin.GET("data-jadwal", func(c *gin.Context) { controllers.DataJadwal(c) })
 		routeAdmin.GET("pengeluaran", func(c *gin.Context) { controllers.Pengeluaran(c) })
 		routeAdmin.GET("pemasukan", func(c *gin.Context) { controllers.Pemasukan(c) })

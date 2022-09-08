@@ -150,19 +150,11 @@ func HeaderTemplateAdmin() string {
 					  <span>Manage jadwal</span>
 					</a>
 				  </li>
-				  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  <li class="nav-item">
+					<a class="nav-link " href="` + base_url + `data-barang">
 					  <i class="material-icons">vertical_split</i>
-					  <span class="list-menu">Manage Barang</span>
+					  <span>Data Barang</span>
 					</a>
-					<div class="dropdown-menu dropdown-menu-small" role="menu" aria-labelledby="dLabel">
-					  <a class="dropdown-item" href="` + base_url + `admin/data-panggung">
-						Data Panggung
-					  </a>
-					  <a class="dropdown-item" href="` + base_url + `admin/data-dekorasi">
-						Data Dekorasi
-					  </a>
-					</div> 
 				  </li>
 				  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

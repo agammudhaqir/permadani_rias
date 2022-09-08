@@ -1,0 +1,244 @@
+{{.headerAdmin}}
+<style>
+    .text_dot {
+      display: block;/* or inline-block */
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      max-height: 3.2em;
+      line-height: 1.6rem;
+    }
+    .card-post__image{
+      min-height: 7.3125rem !important;
+    }
+
+    /* Modal */
+    .fade:not(.show) {
+      opacity: 1;
+    }
+    .modal{
+        background: rgba(177, 184, 177,.4) 
+    }
+</style>
+<div class="modal fade" id="modal-form" tabindex="1" role="dialog" aria-labelledby="modal-form" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" style="margin-top: 10% ;" role="document">
+    <div class="modal-content">
+      <form role="form" id="form-add" method="POST" action="javascript:void(0)">
+        <div class="modal-header py-3">
+          <h6 class="mb-0" id="modal-label"></h6>
+        </div>
+        <div class="modal-body" style="background-color: #e7eff7 ;">
+            <div class="form-group">
+              <label for="" style="font-size: 14px; font-weight: 300;">Nama Barang <span style="color: red; font-size: 12px;">*</span></label>
+              <input type="text" class="form-control form-control-alternative" name="nama_barang" id="nama_barang" required>
+            </div>
+            <div class="form-group">
+              <label for="" style="font-size: 14px; font-weight: 300;">Harga <span style="color: red; font-size: 12px;">*</span></label>
+              <input type="text" class="form-control form-control-alternative" name="nama_barang" id="nama_barang" required>
+            </div>
+            <div class="form-group">
+              <label for="" style="font-size: 14px; font-weight: 300;">Deskripsi <span style="color: red; font-size: 12px;">*</span></label>
+              <textarea name="deskripsi" id="" class="form-control" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="" style="font-size: 14px; font-weight: 300;">Upload Gambar <span style="color: red; font-size: 12px;">* (jpg,png,jpeg)</span></label>
+              <input class="form-control" type="file" id='files' name="files[]" accept="image/png, image/jpeg , image/jpg" multiple><br>
+            </div>
+            <div>
+                <div id='preview'></div>
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="mb-2 px-3 btn btn-sm bg-gradient-secondary btn-modal-close" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="submit"id="modal-submit" class="mb-2 px-3 btn btn-sm bg-gradient-primary">
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="main-content-container container-fluid p-4 ">
+  <div class="row">
+    <div class="col">
+      <div class="card card-small">
+        <div class="card-header border-bottom d-flex py-2">
+            <div class="btn-group filter-btn" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary active">All</button>
+                <button type="button" class="btn btn-secondary">Dekorasi</button>
+                <button type="button" class="btn btn-secondary">Panggung</button>
+                <button type="button" class="btn btn-secondary">Tenda</button>
+            </div>
+          <form action="#" class="ml-auto main-navbar__search  d-none d-md-flex d-lg-flex" id="container-search-dt">
+            <div class="input-group input-group-seamless" style="min-width: 24.5rem !important;">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                <i class="fas fa-search"></i>
+                </div>
+              </div>
+              <input id="myInputTextField" class="navbar-search form-control" type="text" placeholder="Search data ..." aria-label="Search"  autocomplete="off"> 
+            </div>
+          </form>
+          <button class="btn btn-sm btn-info" onclick="addBarang()"><i class="fa fa-plus"></i> Tambah barang</button>
+        </div>
+        <div class="card-body pb-2 pt-0 px-2">
+          <table class="table mb-0" id="table-container" style="font-size: 12px">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" class="border-0">Nama</th>
+                <th scope="col" class="border-0">Ukuran</th>
+                <th scope="col" class="border-0">Harga</th>
+                <th scope="col" class="border-0">Foto</th>
+                <th scope="col" class="border-0">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dekorasi A</td>
+                <td>3 X 5</td>
+                <td>30000</td>
+                <td><img style="width: 20px;" src="{{.base_url}}asset/asset/image/barang/dekorasi/Dekorasi-4x4.png" alt=""></td>
+                <td>Gdańsk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{.footerAdmin}}
+<script>
+  var maxW = ($(window).height() || $("body").height()) - 254
+  var table ;
+  $(document).ready(function(params) {
+    drawTable()
+    handleSubmit()
+    $(".btn-modal-close").on('click',function(params) {
+        $('#modal-form').hide()
+        $('#form-add').trigger('reset')
+    })
+  })
+
+  function handleSearch() {
+    $(document.body).on('input', '#myInputTextField', function() {
+      var leng = $('#myInputTextField').val().length
+      var val_ = $('#myInputTextField').val()
+      // if(leng > 2 || leng == 0){
+      //   clearTimeout(delayTimer);
+      //   delayTimer = setTimeout(function() {
+      //     getParam()
+      //   }, 1000);
+      // }
+      // table.draw()
+      table.search(val_).draw();
+    });
+  }
+
+  function drawTable(params) {
+    table = $('#table-container').DataTable({
+      "bPaginate": false,
+      "bLengthChange": false,
+      "bFilter": true,
+      "bInfo": false,
+      "bAutoWidth": false,
+      "pageLength": 15,
+      "processing": true,
+      "scrollX": "true",
+      "scrollY": maxW,
+      "paging":true,
+      language: {
+        processing: '<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>'
+      },
+      // "columnDefs": [
+      //   { "width": "140", "targets": 0 },
+      //   { "width": "250", "targets": 1 },
+      //   { "width": "100", "targets": 2 },
+      //   { "width": "350", "targets": 3 },
+      //   { "width": "100", "targets": 4 },
+      //   { "width": "100", "targets": 5 },
+      //   // ,{ "width": "20", "targets": 6 }
+      // ]
+    })
+    $('#table-container_filter').remove()
+    handleSearch()
+  }
+
+  function addBarang(params) {
+    $('#modal-form').show()
+    $('#modal-label').html('Tambah barang')
+    $('#modal-submit').html('Submit')
+    $('aside').css('z-index','900')
+  }
+  function submitBarang(params) {
+    $('#form-add').trigger('submit')
+  }
+  function handleSubmit() {
+    var confirm_btn = $('#modal-submit').html()
+    $('#form-add').submit(function (e) {
+      if ($('#new_password').val() == $('#confirm_password').val() ) {
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: confirm_btn=="Submit"?"menambah data baru!":"mengubah data!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#5e72e4',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Change password!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            var formData = new FormData($('#form-add')[0]);
+            $.ajax({
+                type: "POST",
+                url: confirm_btn=="Submit"?urlTambahData:urlUbahData,
+                xhr: function() {
+                    var myXhr = $.ajaxSettings.xhr();
+                    return myXhr;
+                },
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function(request) {
+                  request.setRequestHeader("Authorization", "Bearer "+localStorage.getItem("token"));
+                },
+                success: function (resp) {
+                  if (resp.status != 'Error') {
+                    Swal.fire({
+                        title:"Success Update Case",
+                        text:"please relogin with new password",
+                        icon: "success",
+                    }).then(function (params) {
+                        window.location.href = '{{.base_url}}'
+                    })
+                  }else{
+                    Swal.fire({
+                        title:"Upss!!!",
+                        text: resp.message,
+                        icon: "warning",
+                    })
+                  }
+                    
+                },
+                error: function (resp) {
+                    Swal.fire({
+                        title:"Upss!!!",
+                        text: "Sory, server  error",
+                        icon: "warning",
+                    })
+                }
+            });
+          }
+        })
+      }else{
+        Swal.fire({
+          title:"Upss!!!",
+          text: "New password and Confirm password not match",
+          icon: "warning",
+        })
+      }
+    })
+  }
+</script>

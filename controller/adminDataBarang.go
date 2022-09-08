@@ -1,5 +1,6 @@
 package control
 
+
 import (
 	"html/template"
 	"net/http"
@@ -9,11 +10,11 @@ import (
 	"github.com/spf13/viper"
 )
 
-func DataPanggung(c *gin.Context) {
-	c.HTML(http.StatusOK, "data-panggung.html", gin.H{
+func DataBarang(c *gin.Context) {
+	c.HTML(http.StatusOK, "data-barang.html", gin.H{
 		"headerAdmin": template.HTML(core.HeaderTemplateAdmin()),
 		"footerAdmin": template.HTML(core.FooterTemplateAdmin()),
 		"base_url":     viper.GetString("base_url"),
-		"title_menu": "Data Panggung",
+		"title_menu": "Data Dekorasi",
 	})
 }
