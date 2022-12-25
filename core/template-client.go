@@ -25,7 +25,7 @@ func HeaderTemplateClient() string {
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="` + base_url + `asset/shard/styles/shards-dashboards.1.1.0.min.css">
-		<link rel="stylesheet" href="` + base_url + `asset/shard/styles/extras.1.3.1.min.css">
+		<link rel="stylesheet" href="` + base_url + `asset/shard/styles/extras.1.1.0.min.css">
 		<link rel="stylesheet" href="` + base_url + `asset/asset/css/global.css">
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 		<style>
@@ -70,7 +70,7 @@ func HeaderTemplateClient() string {
 					</form>
 					<ul class="navbar-nav border-left flex-row border-right ml-auto">
 					  <li class="nav-item border-right dropdown notifications">
-						<a class="nav-link nav-link-icon text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link nav-link-icon text-center ml-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						  <div class="nav-link-icon__wrapper">
 							<i class="material-icons">&#xE7F4;</i>
 							<span class="badge badge-pill badge-danger">2</span>
@@ -103,7 +103,7 @@ func HeaderTemplateClient() string {
 						</div>
 					  </li>
 					  <li class="nav-item dropdown m-auto">
-					  	<a class="nav-link  text-nowrap px-3"  href="` + base_url + `" role="button" >
+					  	<a class="nav-link  text-nowrap px-3 ml-0"  href="` + base_url + `" role="button" >
 							<i class="fa fa-user"></i><span class="d-none d-md-inline-block" style="font-size:15px !important;font-weight:bold !important">Login</span>
 						</a>
 					  	<!-- <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -134,17 +134,12 @@ func HeaderTemplateClient() string {
 				  <div class="row">
 					<div class="col">
 					  <ul class="nav nav-tabs border-0 flex-column flex-lg-row" id="container-menu">
-						<li class="nav-item dropdown">
-						  <a class="nav-link" data-toggle="dropdown"><i class="material-icons">&#xE2C7;</i> Dashboards</a>
-						  <div class="dropdown-menu dropdown-menu-small">
-							<a href="index.html" class="dropdown-item">Analytics</a>
-							<a href="ecommerce.html" class="dropdown-item">Store</a>
-							<a href="blog-overview.html" class="dropdown-item">Blog</a>
-						  </div>
+						<li class="nav-item">
+							<a href="` + base_url + `client" class="nav-link"><i class="material-icons">home</i> Home</a>
 						</li>
 
 						<li class="nav-item">
-						  <a href="` + base_url + `client" class="nav-link"><i class="material-icons">view_day</i> Catalog</a>
+						  <a href="` + base_url + `client/catalog" class="nav-link"><i class="material-icons">view_day</i> Catalog</a>
 						</li>
 
 						<li class="nav-item">
@@ -215,9 +210,8 @@ func FooterTemplateClient() string {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 		<script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
-		<script src="` + base_url + `asset/shard/scripts/extras.1.3.1.min.js"></script>
-		<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.3.1.min.js"></script>
-		<script src="` + base_url + `asset/shard/scripts/app/app-analytics-overview.1.3.1.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/extras.1.1.0.min.js"></script>
+		<script src="` + base_url + `asset/shard/scripts/shards-dashboards.1.1.0.min.js"></script>
 		<script src="` + base_url + `asset/asset/js/globalClient.js"></script>
 		</body>
 		</html>

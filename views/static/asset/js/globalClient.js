@@ -1,4 +1,14 @@
+var slide_active = 0;
 $(document).ready(function (params) {
+    setInterval(function(params) {
+        slide_active +=1
+        if (slide_active == 2) {
+            slide_active = 0
+        }
+        $('.carousel-inner').find('.active').removeClass('active')
+        $('.carousel-inner').children().eq(slide_active).addClass('active')
+        console.log(slide_active);
+    },3000)
     activeMenu()
 })
 function activeMenu(params) {

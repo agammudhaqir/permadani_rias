@@ -119,6 +119,7 @@ func Routing(router *gin.Engine, dbs helper.DBStruct) {
 	routeClient := router.Group("client")
 	{
 		routeClient.GET("", func(c *gin.Context) { controllers.HomePage(c, dbs) })
+		routeClient.GET("catalog", func(c *gin.Context) { controllers.CatalogPage(c, dbs) })
 		routeClient.GET("jadwal", func(c *gin.Context) { controllers.ClientJadwal(c) })
 		routeClient.GET("status", func(c *gin.Context) { controllers.ClientStatus(c) })
 		routeClient.GET("transaksi", func(c *gin.Context) { controllers.ClientTransaksi(c) })

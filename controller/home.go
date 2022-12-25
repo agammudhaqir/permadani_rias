@@ -18,6 +18,13 @@ func HomePage(c *gin.Context, dbs helper.DBStruct) {
 		"base_url":     viper.GetString("base_url"),
 	})
 }
+func CatalogPage(c *gin.Context, dbs helper.DBStruct) {
+	c.HTML(http.StatusOK, "catalog.html", gin.H{
+		"headerClient": template.HTML(core.HeaderTemplateClient()),
+		"footerClient": template.HTML(core.FooterTemplateClient()),
+		"base_url":     viper.GetString("base_url"),
+	})
+}
 
 func GetCatalog(c *gin.Context, dbs helper.DBStruct) {
 

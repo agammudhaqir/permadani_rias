@@ -151,7 +151,7 @@ func HeaderTemplateAdmin() string {
 					</a>
 				  </li>
 				  <li class="nav-item">
-					<a class="nav-link " href="` + base_url + `data-barang">
+					<a class="nav-link " href="` + base_url + `admin/data-barang">
 					  <i class="material-icons">vertical_split</i>
 					  <span>Data Barang</span>
 					</a>
